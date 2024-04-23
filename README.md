@@ -118,7 +118,6 @@ show_matrix.plot()
 plt.show()
 ```
 
-###### asdasdasd
 ![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/Confusion%20Matrix.png)
 
 
