@@ -3,10 +3,30 @@
 ###### Project Description: Blood Test Disease Diagnosis, This Project Will Determine Whether A Blood Test Sample Has Malaria Or Not.
 
 
-// This is a code block
-function helloWorld() {
-    console.log("Hello, world!");
-}
+
+```
+{python}
+print("Hello Python!")
+asd
+asd
+asd
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
