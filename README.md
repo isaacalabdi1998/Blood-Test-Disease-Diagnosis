@@ -119,8 +119,7 @@ plt.show()
 ```
 
 ###### asdasdasd
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/blob/main/Dataset/Confusion%20Matrix.png)
+![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/Confusion%20Matrix.png)
 
 
 
