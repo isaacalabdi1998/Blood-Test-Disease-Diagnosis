@@ -117,7 +117,7 @@ show_matrix=ConfusionMatrixDisplay(confusion_matrix=rf_cm,display_labels=[False,
 show_matrix.plot()
 plt.show()
 ```
-![Alt text]([https://example.com/image.png](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/blob/main/Dataset/Confusion%20Matrix.png))
+![Alt text](Dataset/Confusion Matrix.png)
 
 
 
