@@ -121,4 +121,63 @@ plt.show()
 ![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/Confusion%20Matrix.png)
 
 
+### K-Nearest Neighbors Model
+```python
+from sklearn.neighbors import KNeighborsClassifier
+knn_clf=KNeighborsClassifier(n_neighbors=3)
+knn_clf.fit(x_train,y_train)
+knn_y_pred=knn_clf.predict(x_test)
+
+knn_score=accuracy_score(y_test,knn_y_pred)
+knn_score
+```
+
+###### 0.6196666666666667
+
+```python
+knn_cm=confusion_matrix(y_test,knn_y_pred)
+show_matrix=ConfusionMatrixDisplay(confusion_matrix=knn_cm,display_labels=[False,True])
+
+show_matrix.plot()
+plt.show()
+```
+
+![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/1_Confusion%20Matrix.png)
+
+
+
+
+
+
+
+
+
+
+
+
+### Logistic Regression Model
+
+```python
+from sklearn.linear_model import LogisticRegression
+lr_clf=LogisticRegression(solver='saga') # The 'Saga' Solver is Most Appropiate For Large Datasets
+lr_clf.fit(x_train,y_train)
+lr_y_pred=lr_clf.predict(x_test)
+```
+```python
+lr_score=accuracy_score(y_test,lr_y_pred)
+lr_score
+```
+
+0.6733333333333333
+
+```python
+lr_cm=confusion_matrix(y_test,lr_y_pred)
+show_matrix=ConfusionMatrixDisplay(confusion_matrix=lr_cm,display_labels=[False,True])
+
+show_matrix.plot()
+plt.show()
+```
+
+![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/2_Confusion%20Matrix.png)
+
 
