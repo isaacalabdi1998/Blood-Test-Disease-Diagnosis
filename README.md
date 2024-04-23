@@ -87,3 +87,35 @@ print(x_train.shape,x_test.shape,y_train.shape,y_test.shape)
 ###### (9000, 16875) (3000, 16875) (9000,) (3000,)
 
 
+# 4- Model Selection
+
+###### Multiple Algorithms Will Be Implemented, Including :
+
+######   1- Random Forest Classifier
+######   2- K-Nearest Neighbor
+######   3- Logistic Regression
+######   4- Support Vector Machine
+
+### Random Forest Model
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+rf_clf=RandomForestClassifier(n_estimators=200,random_state=100)
+rf_clf.fit(x_train,y_train)
+rf_y_pred=rf_clf.predict(x_test)
+
+from sklearn.metrics import accuracy_score,confusion_matrix,ConfusionMatrixDisplay
+rf_score=accuracy_score(y_test,rf_y_pred)
+score
+```
+###### 0.8263333333333334
+
+```python
+# What is a Confusion Matrix? https://www.w3schools.com/python/python_ml_confusion_matrix.asp
+rf_cm=confusion_matrix(y_test,rf_y_pred)
+show_matrix=ConfusionMatrixDisplay(confusion_matrix=rf_cm,display_labels=[False,True])
+show_matrix.plot()
+plt.show()
+```
+
+
