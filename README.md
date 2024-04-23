@@ -63,6 +63,7 @@ print("Data Format Before Conversion",data.shape)
 
 ###### Data Format Before Conversion (12000, 75, 75, 3)
 ###### Data Format Before Conversion (12000, 16875)
+
 ```python
 # Normalize Dataset
 from sklearn.preprocessing import MinMaxScaler
@@ -82,6 +83,7 @@ print(f"Max and Min Value After Normalization {np.max(scaled_data)}, {np.min(sca
 from sklearn.model_selection import train_test_split
 # Train Test Split Step, Dataset Will Be Split Into 75% Used For Training, The Other 25% For Testing
 x_train,x_test,y_train,y_test=train_test_split(scaled_data,label,test_size=0.25,random_state=100)
+
 print(x_train.shape,x_test.shape,y_train.shape,y_test.shape)
 ```
 ###### (9000, 16875) (3000, 16875) (9000,) (3000,)
@@ -145,16 +147,6 @@ plt.show()
 ![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/1_Confusion%20Matrix.png)
 
 
-
-
-
-
-
-
-
-
-
-
 ### Logistic Regression Model
 
 ```python
@@ -162,22 +154,68 @@ from sklearn.linear_model import LogisticRegression
 lr_clf=LogisticRegression(solver='saga') # The 'Saga' Solver is Most Appropiate For Large Datasets
 lr_clf.fit(x_train,y_train)
 lr_y_pred=lr_clf.predict(x_test)
-```
-```python
+
 lr_score=accuracy_score(y_test,lr_y_pred)
 lr_score
-```
 
-0.6733333333333333
 
-```python
+
 lr_cm=confusion_matrix(y_test,lr_y_pred)
 show_matrix=ConfusionMatrixDisplay(confusion_matrix=lr_cm,display_labels=[False,True])
 
 show_matrix.plot()
 plt.show()
 ```
-
 ![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/2_Confusion%20Matrix.png)
 
+
+
+### Support Vector Machine Model
+
+```python
+from sklearn.svm import SVC
+svm_clf=SVC(kernel='linear')
+svm_clf.fit(x_train,y_train)
+svm_y_pred=svm_clf.predict(x_test)
+
+svm_score=accuracy_score(y_test,svm_y_pred)
+svm_score
+```
+```python
+svm_cm=confusion_matrix(y_test,svm_y_pred)
+show_matrix=ConfusionMatrixDisplay(confusion_matrix=svm_cm,display_labels=[False,True])
+
+show_matrix.plot()
+plt.show()
+```
+![Confusion Matrix](https://github.com/isaacalabdi1998/Blood-Test-Disease-Diagnosis/raw/main/Dataset/3_Confusion%20Matrix.png)
+
+
+
+# 4- Model Selection
+
+### Since The Random Forest Model Is The Best Performing Model, This Model Will Be Chosen.
+
+```python
+# A Final Test
+
+choice=np.random.randint(len(x_test)) # choose a test image at random
+sample_img=x_test[choice].reshape(75,75,3)
+
+cv2.imshow("img",sample_img)
+cv2.waitKey()
+
+result=rf_clf.predict(x_test[choice].reshape(1,-1))
+print("Infected With Malaria" if not result[0] else "Not Infected")
+```
+
+
+# 5- Final Thoughts And Some Considerations
+
+###### - The Random Forest Model Can Be Used To Obtain Accurate Results, But To Increase The Accuracy Of The Model Even Further, There Are A Few Thing That Can Be Done, Such As :
+###### - Applying Principal Component Analysis To Reduce Feature Size And To Obtain Only The Most Important Pixel Information
+###### - Hyperparameter Tuning
+###### - Increase Sample Size
+
+# END OF PROJECT
 
