@@ -10,44 +10,11 @@ import matplotlib.pyplot as plt
 import os
 ```
 
-```python
-def greet():
-    print("Hello, world!")
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 1- Importing Libraries
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-import os
-
-
-
 # 2- Loading The Image Dataset
+```python
 path="..\\AIProject\\Dataset\\cell_images"
 data=[]
 label=[]
-
-
 
 for folder in os.listdir(path):
     joined_path=os.path.join(path,folder)
@@ -74,7 +41,9 @@ label=np.array(label)
 data=np.array(data)
 print(data.shape) 
 print(label.shape) #should be equal to number of samples read, ie images.
-
+```
+######(12000, 75, 75, 3)
+######(12000,)
 
 
 
