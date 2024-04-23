@@ -42,8 +42,8 @@ data=np.array(data)
 print(data.shape) 
 print(label.shape) #should be equal to number of samples read, ie images.
 ```
-######(12000, 75, 75, 3)
-######(12000,)
+###### -(12000, 75, 75, 3)
+###### -(12000,)
 
 
 
