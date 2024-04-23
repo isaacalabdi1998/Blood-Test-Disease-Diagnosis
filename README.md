@@ -63,6 +63,27 @@ print("Data Format Before Conversion",data.shape)
 
 Data Format Before Conversion (12000, 75, 75, 3)
 Data Format Before Conversion (12000, 16875)
+```python
+# Normalize Dataset
+from sklearn.preprocessing import MinMaxScaler
 
+print(f"Max and Min Value Before Normalization {np.max(data)}, {np.min(data)}")
+scaler=MinMaxScaler() # Should be 255 and 0 Before Normalization Process
+
+scaled_data=scaler.fit_transform(data)
+
+print(f"Max and Min Value After Normalization {np.max(scaled_data)}, {np.min(scaled_data)}")
+# Should be 1 and 0 After Normalization Process
+```
+Max and Min Value Before Normalization 255, 0
+Max and Min Value After Normalization 1.0, 0.0
+
+```python
+from sklearn.model_selection import train_test_split
+# Train Test Split Step, Dataset Will Be Split Into 75% Used For Training, The Other 25% For Testing
+x_train,x_test,y_train,y_test=train_test_split(scaled_data,label,test_size=0.25,random_state=100)
+print(x_train.shape,x_test.shape,y_train.shape,y_test.shape)
+```
+(9000, 16875) (3000, 16875) (9000,) (3000,)
 
 
