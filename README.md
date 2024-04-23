@@ -3,7 +3,7 @@
 ###### Project Description: Blood Test Disease Diagnosis, This Project Will Determine Whether A Blood Test Sample Has Malaria Or Not.
 
 # 1- Importing Libraries
-```
+```python
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
