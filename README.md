@@ -2,12 +2,14 @@
 
 ###### Project Description: Blood Test Disease Diagnosis, This Project Will Determine Whether A Blood Test Sample Has Malaria Or Not.
 
-###### Team Members :
-######    - MOHAMMAD ALMOHAMMAD, 1810213528
-######    - ISAAC ALABADI, 1910213588
-#####    - AHMED ALAHMAR, 1810213527
-######    - Ayman Al-arabi, 1910213589
-######    - Osama Aldubhani, 2017710213455
+
+// This is a code block
+function helloWorld() {
+    console.log("Hello, world!");
+}
+
+
+
 
 # 1- Importing Libraries
 import cv2
